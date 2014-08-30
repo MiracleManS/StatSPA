@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ember Starter Kit</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body role="document">
+  <script type="text/x-handlebars">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Hockey Stats</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li>{{#link-to 'teams'}}Teams{{/link-to}}</li>
+            <li>{{#link-to 'about'}}About{{/link-to}}</li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    {{outlet}}
+  </script>
+
+
+
+    <script type="text/x-handlebars" id="teams">
+    <div class="container">
+        <div class="page-header"><h1>Welcome to NHL Stats</h1></div>
+        <div class="page-header">
+          <h3>Teams</h3>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive">
+              <table class="table">
+              <thead>
+                <tr>
+                  <th>Team Name</th>
+                  <th>Location</th>
+                </tr>
+              </thead>
+              {{#each model}}
+                <tr>
+                  <td>
+                   <a href='#' {{action 'gotoTeam' this}}>{{name}}</a>
+                  <td>
+                  <td>
+                    {{locat}}
+                  </td>
+                </tr>
+              {{/each}}
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" id="team">
+    <div class="container">
+        <div class="page-header"><h1>Welcome to NHL Stats</h1></div>
+        <div class="page-header">
+          <h3>Teams</h3>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive">
+              <table class="table">
+              <tbody>
+              <thead>
+                <tr>
+                  <th>Player Name</th>
+                  <th>Position</th>
+                </tr>
+              </thead>
+
+              {{#each model}}
+                <tr>
+                  <td>
+                    {{name}}
+                  <td>
+                  <td>
+                    {{position}}
+                  </td>
+                </tr>
+              {{/each}}
+              </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" id="IndexRoute">
+    <div class="container">
+      <div class="page-header"><h1>Welcome to NHL Stats</h1></div>
+      <div class="page-header">
+        <h3>Teams</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur nisi sed sem viverra fermentum vitae lacinia enim. Nulla tristique eget metus eu volutpat. Pellentesque tortor magna, vehicula consequat lectus vel, laoreet dictum neque. Proin facilisis condimentum bibendum. Integer velit orci, luctus vel tincidunt vitae, vehicula cursus sapien. Suspendisse vitae velit at magna congue pellentesque at et massa. Morbi ac auctor sem. Etiam sit amet ipsum dolor. Nulla ac orci imperdiet, sollicitudin arcu non, suscipit est.
+
+Quisque mi nulla, vestibulum a bibendum id, viverra eget ex. Nullam tincidunt vehicula dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut efficitur felis. Proin varius sem sed libero aliquam blandit. Proin ac magna velit. Praesent accumsan, velit a fringilla ultricies, massa lectus gravida ante, eu lobortis lectus lacus eu nisl. Curabitur vitae massa imperdiet ex tempus vestibulum.
+
+Aenean fermentum sem id ullamcorper aliquam. Nunc fringilla turpis in orci ornare, non dapibus nibh laoreet. Donec porta blandit dui. Proin ipsum mauris, laoreet vehicula justo eu, euismod tempor eros. Duis eleifend ligula in nisl fermentum, sit amet sodales est dictum. Vestibulum a rhoncus lorem. Duis porta suscipit consequat. Phasellus ut vestibulum felis. Donec eu libero et ipsum tempus dignissim ut a diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus nunc nibh, sodales fermentum sem pulvinar sed. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed faucibus sem quis facilisis blandit. Praesent finibus lectus vitae nisi condimentum pretium. In hac habitasse platea dictumst. Donec massa erat, lacinia et posuere eu, blandit in nulla.
+
+Donec mattis sit amet diam vitae bibendum. Aliquam sagittis lacus nisl, et rhoncus enim ultrices nec. Sed dignissim odio vel laoreet consequat. Donec luctus ultricies ligula ut convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis in imperdiet mi, ac viverra odio. Duis ut rhoncus ex. Nunc dapibus libero viverra augue maximus dapibus. Fusce dignissim maximus tortor, eu tincidunt risus luctus non. Nunc gravida rutrum purus ut varius. Aliquam vestibulum laoreet felis, quis interdum lacus consequat vel.
+
+Integer justo sem, tempus vel orci posuere, gravida gravida turpis. In in elit ligula. Duis posuere ipsum semper ipsum aliquam, a finibus dolor laoreet. Etiam ut facilisis dolor, et vehicula est. Suspendisse bibendum fermentum aliquet. Nam in turpis sagittis, rutrum lacus quis, feugiat tortor. Praesent egestas suscipit ullamcorper. Quisque in libero vulputate, maximus felis sed, sollicitudin metus. Mauris vel dignissim metus, ut bibendum ante. Etiam facilisis ac elit dignissim blandit. Donec velit odio, mattis sed cursus non, volutpat sed nisi. Sed dignissim, ipsum id malesuada consequat, tellus metus accumsan mauris, ac ullamcorper nibh nisi quis nunc. Phasellus egestas orci elementum tincidunt maximus.</p>
+        </div>
+      </div>
+    </div>
+    </script>
+
+
+
+
+    <script type="text/x-handlebars" id="about">
+    <div class="container">
+      <div class="page-header"><h1>Welcome to NHL Stats</h1></div>
+      <div class="page-header">
+        <h3>Teams</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur nisi sed sem viverra fermentum vitae lacinia enim. Nulla tristique eget metus eu volutpat. Pellentesque tortor magna, vehicula consequat lectus vel, laoreet dictum neque. Proin facilisis condimentum bibendum. Integer velit orci, luctus vel tincidunt vitae, vehicula cursus sapien. Suspendisse vitae velit at magna congue pellentesque at et massa. Morbi ac auctor sem. Etiam sit amet ipsum dolor. Nulla ac orci imperdiet, sollicitudin arcu non, suscipit est.
+
+Quisque mi nulla, vestibulum a bibendum id, viverra eget ex. Nullam tincidunt vehicula dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut efficitur felis. Proin varius sem sed libero aliquam blandit. Proin ac magna velit. Praesent accumsan, velit a fringilla ultricies, massa lectus gravida ante, eu lobortis lectus lacus eu nisl. Curabitur vitae massa imperdiet ex tempus vestibulum.
+
+Aenean fermentum sem id ullamcorper aliquam. Nunc fringilla turpis in orci ornare, non dapibus nibh laoreet. Donec porta blandit dui. Proin ipsum mauris, laoreet vehicula justo eu, euismod tempor eros. Duis eleifend ligula in nisl fermentum, sit amet sodales est dictum. Vestibulum a rhoncus lorem. Duis porta suscipit consequat. Phasellus ut vestibulum felis. Donec eu libero et ipsum tempus dignissim ut a diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus nunc nibh, sodales fermentum sem pulvinar sed. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed faucibus sem quis facilisis blandit. Praesent finibus lectus vitae nisi condimentum pretium. In hac habitasse platea dictumst. Donec massa erat, lacinia et posuere eu, blandit in nulla.
+
+Donec mattis sit amet diam vitae bibendum. Aliquam sagittis lacus nisl, et rhoncus enim ultrices nec. Sed dignissim odio vel laoreet consequat. Donec luctus ultricies ligula ut convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis in imperdiet mi, ac viverra odio. Duis ut rhoncus ex. Nunc dapibus libero viverra augue maximus dapibus. Fusce dignissim maximus tortor, eu tincidunt risus luctus non. Nunc gravida rutrum purus ut varius. Aliquam vestibulum laoreet felis, quis interdum lacus consequat vel.
+
+Integer justo sem, tempus vel orci posuere, gravida gravida turpis. In in elit ligula. Duis posuere ipsum semper ipsum aliquam, a finibus dolor laoreet. Etiam ut facilisis dolor, et vehicula est. Suspendisse bibendum fermentum aliquet. Nam in turpis sagittis, rutrum lacus quis, feugiat tortor. Praesent egestas suscipit ullamcorper. Quisque in libero vulputate, maximus felis sed, sollicitudin metus. Mauris vel dignissim metus, ut bibendum ante. Etiam facilisis ac elit dignissim blandit. Donec velit odio, mattis sed cursus non, volutpat sed nisi. Sed dignissim, ipsum id malesuada consequat, tellus metus accumsan mauris, ac ullamcorper nibh nisi quis nunc. Phasellus egestas orci elementum tincidunt maximus.</p>
+        </div>
+      </div>
+      </div>
+    </script>
+
+
+  <script src="js/libs/jquery-1.10.2.js" type="text/javascript"></script>
+  <script src="js/libs/handlebars-1.1.2.js" type="text/javascript"></script>
+  <script src="js/libs/ember-1.7.0.js" type="text/javascript"></script>
+  <script src="js/libs/ember-data.js" type="text/javascript"></script>
+  <script src="js/app.js" type="text/javascript"></script>
+  <!-- to activate the test runner, add the "?test" query string parameter -->
+  <script src="tests/runner.js"></script>
+</body>
+</html>
